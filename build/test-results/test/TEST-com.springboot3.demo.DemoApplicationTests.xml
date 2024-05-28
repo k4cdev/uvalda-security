@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.springboot3.demo.DemoApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-05-28T04:43:11" hostname="BLUE" time="0.959">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.springboot3.demo.DemoApplicationTests" time="0.959"/>
+  <system-out><![CDATA[23:43:03.888 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.springboot3.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+23:43:04.076 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.springboot3.demo.DemoApplication for test class com.springboot3.demo.DemoApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-27T23:43:04.772-05:00  INFO 13344 --- [demo] [    Test worker] c.springboot3.demo.DemoApplicationTests  : Starting DemoApplicationTests using Java 17.0.9 with PID 13344 (started by koliv in C:\Users\koliv\uvalda-security)
+2024-05-27T23:43:04.774-05:00  INFO 13344 --- [demo] [    Test worker] c.springboot3.demo.DemoApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2024-05-27T23:43:05.871-05:00  INFO 13344 --- [demo] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-27T23:43:05.965-05:00  INFO 13344 --- [demo] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81 ms. Found 2 JPA repository interfaces.
+2024-05-27T23:43:06.771-05:00  INFO 13344 --- [demo] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-27T23:43:06.899-05:00  INFO 13344 --- [demo] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-27T23:43:06.969-05:00  INFO 13344 --- [demo] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-27T23:43:07.480-05:00  INFO 13344 --- [demo] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-27T23:43:07.538-05:00  INFO 13344 --- [demo] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-27T23:43:07.825-05:00  INFO 13344 --- [demo] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@39851c5
+2024-05-27T23:43:07.825-05:00  INFO 13344 --- [demo] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-27T23:43:07.898-05:00  WARN 13344 --- [demo] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-27T23:43:09.604-05:00  INFO 13344 --- [demo] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-27T23:43:09.630-05:00 DEBUG 13344 --- [demo] [    Test worker] org.hibernate.SQL                        : drop table if exists clients cascade
+Hibernate: drop table if exists clients cascade
+2024-05-27T23:43:09.653-05:00 DEBUG 13344 --- [demo] [    Test worker] org.hibernate.SQL                        : drop table if exists users cascade
+Hibernate: drop table if exists users cascade
+2024-05-27T23:43:09.659-05:00 DEBUG 13344 --- [demo] [    Test worker] org.hibernate.SQL                        : drop sequence if exists users_seq
+Hibernate: drop sequence if exists users_seq
+2024-05-27T23:43:09.667-05:00 DEBUG 13344 --- [demo] [    Test worker] org.hibernate.SQL                        : create sequence users_seq start with 1 increment by 50
+Hibernate: create sequence users_seq start with 1 increment by 50
+2024-05-27T23:43:09.684-05:00 DEBUG 13344 --- [demo] [    Test worker] org.hibernate.SQL                        : create table clients (id bigserial not null, name varchar(255), primary key (id))
+Hibernate: create table clients (id bigserial not null, name varchar(255), primary key (id))
+2024-05-27T23:43:09.699-05:00 DEBUG 13344 --- [demo] [    Test worker] org.hibernate.SQL                        : create table users (role smallint check (role between 0 and 1), id bigint not null, password varchar(255), username varchar(255) not null, primary key (id), unique (username))
+Hibernate: create table users (role smallint check (role between 0 and 1), id bigint not null, password varchar(255), username varchar(255) not null, primary key (id), unique (username))
+2024-05-27T23:43:09.716-05:00  INFO 13344 --- [demo] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-27T23:43:10.792-05:00  INFO 13344 --- [demo] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@47f8374, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@22a8e87b, org.springframework.security.web.context.SecurityContextHolderFilter@202b5293, org.springframework.security.web.header.HeaderWriterFilter@3e574f9c, org.springframework.web.filter.CorsFilter@b8c6406, org.springframework.security.web.authentication.logout.LogoutFilter@58267ba1, com.springboot3.demo.jwt.JwtAuthenticationFilter@39a09c0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@501b15b9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@769b1d1c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6bed434d, org.springframework.security.web.session.SessionManagementFilter@d164938, org.springframework.security.web.access.ExceptionTranslationFilter@4f8641d1, org.springframework.security.web.access.intercept.AuthorizationFilter@2821da0a]
+2024-05-27T23:43:11.202-05:00  INFO 13344 --- [demo] [    Test worker] c.springboot3.demo.DemoApplicationTests  : Started DemoApplicationTests in 6.839 seconds (process running for 8.884)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
